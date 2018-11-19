@@ -2,9 +2,9 @@ import React from 'react'
 
 const TextBlock = (props) =>{
   return(
-    <div className="TextBlock">
-      <h2>{props.title}</h2>
-      <p>{props.text}</p>
+    <div style={props.styles.style} className="TextBlock">
+      <h2 style={props.styles.titleStyle}>{props.title}</h2>
+      <p style={props.styles.textStyle}>{props.text}</p>
     </div>
   )
 }
