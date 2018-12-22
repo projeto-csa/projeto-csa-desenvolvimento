@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  
+  client:
+    build: ./client
+    command: npm start
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/src
+      - /client/node_modules
+  
+  server:
+    build: ./server
+    command: npm run start:dev
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/src
+      - /server/node_modules
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    container_name: "mongodb"
+    ports:
+        - 27017:27017
+    volumes:
+      - ./data/db:/data/db

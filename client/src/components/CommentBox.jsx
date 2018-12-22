@@ -38,32 +38,30 @@ class CommentBox extends Component {
     this.setState(newState);
   }
 
-  submitComment = (e) => {
+  submitComment = async (e) => {
     e.preventDefault();
     const { author, text } = this.state;
     if (!author || !text) return;
-    fetch(`${apiUrl}/api/comments`, {
+    const res = await fetch(`${apiUrl}/api/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ author, text }),
-    }).then(res => res.json()).then((res) => {
-      if (!res.success) this.setState({ error: res.error.message || res.error });
-      else this.setState({ author: '', text: '', error: null });
     });
+    console.log(res);
+    const jsonRes = await res.json();
+    console.log('json: ', jsonRes);
+    if (!jsonRes.success) this.setState({ error: res.error.message || res.error });
+    else this.setState({ author: '', text: '', error: null });
   }
 
-  loadCommentsFromServer = () => {
+  loadCommentsFromServer = async () => {
     // fetch returns a promise. If you are not familiar with promises, see
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-    fetch(`${apiUrl}/api/comments`)
-      .then(data => {
-        console.log(data)
-        data.json()
-      })
-      .then((res) => {
-        if (!res.success) this.setState({ error: res.error });
-        else this.setState({ data: res.data });
-      });
+    const data = await fetch(`${apiUrl}/api/comments`);
+    console.log(data);
+    const jsonData = await data.json();
+    if (!jsonData.success) this.setState({ error: jsonData.error });
+    else this.setState({ data: jsonData.data });
   }
 
   render() {
