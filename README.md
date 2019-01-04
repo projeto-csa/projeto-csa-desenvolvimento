@@ -31,6 +31,8 @@ Repita esse procedimento no diretório '/client'.
 
 ## Rodar máquina docker
 
+O app tem três máquinas docker: Uma para o servidor, uma para o cliente, e uma para o banco de dados (mongodb). Para rodar as máquinas siga os comandos abaixo.
+
 Na raíz do projeto, rode
 
 `docker-compose up`
@@ -40,5 +42,9 @@ ou
 `docker-compose up -d` para rodar no background
 
 Note que os node_modules são instalados na máquina local, e não dentro do container.
+
+Para abrir um terminal em um dos containers, rode
+
+`docker-compose exec server bash` ou `docker-compose exec client bash`
 
 Acesse localhost:3000 para ver o app.
