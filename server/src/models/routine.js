@@ -6,4 +6,4 @@ const routineSchema = mongoose.Schema({
   description: { type: String, required: true },
 });
 
-module.exports = mongoose.model('Order', routineSchema);
+module.exports = mongoose.model('Routine', routineSchema);
