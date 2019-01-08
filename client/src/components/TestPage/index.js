@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ResponseList from '../ResponseList'
-import stub from '../ResponseList/stub.js'
+import ResponseForm from '../ResponseForm'
+import stub from '../ResponseForm/stub.js'
 
 const TestPage = () => {
-  return <ResponseList responses={stub}/>
+  return <ResponseForm onClick={stub}/>
 }
 
 export default TestPage
