@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ResponseForm from '../ResponseForm'
-import stub from '../ResponseForm/stub.js'
+import Topic from '../Topic'
+import topicStub from '../Topic/stub.js'
 
 const TestPage = () => {
-  return <ResponseForm onClick={stub}/>
+  return <Topic topic={topicStub} />
 }
 
 export default TestPage
