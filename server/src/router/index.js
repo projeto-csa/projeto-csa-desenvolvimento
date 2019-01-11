@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 
 import comments from './comments';
 import routines from './routines';
+import users from './user';
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.get('/', (req, res) => {
 
 router.use('/comments', comments);
 router.use('/routines', routines);
+router.use('/users', users);
 
 export default router;
