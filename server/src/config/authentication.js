@@ -1,11 +1,10 @@
 import session from 'express-session';
 import uuid from 'uuid';
-import passport from 'passport';
 
 import passportSetup from './passport';
 
 const authSetup = (app) => {
-  passportSetup(passport);
+  const passport = passportSetup();
 
   app.use(
     session({

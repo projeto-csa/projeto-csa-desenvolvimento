@@ -1,8 +1,9 @@
+import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 
 import User from '../models/user';
 
-const passportSetup = (passport) => {
+const passportSetup = () => {
   passport.use(
     'local',
     new LocalStrategy(
@@ -30,6 +31,8 @@ const passportSetup = (passport) => {
   passport.deserializeUser(
     (id, done) => User.findById(id, (err, user) => done(err, user)),
   );
+
+  return passport;
 };
 
 export default passportSetup;
