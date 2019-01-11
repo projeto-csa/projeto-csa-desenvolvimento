@@ -3,12 +3,12 @@ import User from '../../models/user';
 export default (req, res) => {
   const loggedUser = req.user;
   if (!loggedUser) {
-    res.status(403).json({
+    return res.status(403).json({
       success: false,
       message: 'Not logged in.',
     });
   }
-  User.findById(loggedUser.id, (error, user) => {
+  return User.findById(loggedUser.id, (error, user) => {
     if (error) {
       return res.status(500).json({ success: false, error });
     }

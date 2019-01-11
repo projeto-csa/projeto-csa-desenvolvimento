@@ -3,12 +3,12 @@ import User from '../../models/user';
 export default (req, res) => {
   const { id } = req.params;
   if (!id) {
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       error: 'No user id provided',
     });
   }
-  User.findById(id, (error, user) => {
+  return User.findById(id, (error, user) => {
     if (error) {
       return res.status(500).json({ success: false, error });
     }
