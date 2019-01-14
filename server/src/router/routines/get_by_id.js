@@ -16,5 +16,6 @@ export default (req, res) => {
       });
     }
     return res.status(404).json({ success: true, error: 'Routine not Found' });
-  });
+  })
+  .populate('routine', '_id');
 };
