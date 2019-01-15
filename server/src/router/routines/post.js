@@ -13,12 +13,12 @@ export default (req, res) => {
 
   const routine = new Routine({
     _id: new mongoose.Types.ObjectId(),
-    name: name,
-    description: description,
+    name,
+    description,
   });
 
   routine.save((err) => {
     if (err) return res.status(500).json({ success: false, error: err });
-    return res.status(201).json({ success: true, routine: routine});
+    return res.status(201).json({ success: true, routine });
   });
 };
