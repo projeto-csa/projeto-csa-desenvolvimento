@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Topic from '../Topic'
-import topicStub from '../Topic/stub.js'
+import TopicList from '../TopicList'
+import stub from '../TopicList/stub.js'
 
 const TestPage = () => {
-  return <Topic topic={topicStub} />
+  return <TopicList topics={stub} />
 }
 
 export default TestPage
