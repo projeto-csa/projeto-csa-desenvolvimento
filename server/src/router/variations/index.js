@@ -12,6 +12,6 @@ router.get('/', get);
 router.get('/:variationId', getById);
 router.post('/', post);
 router.put('/:variationId', put);
-router.delete('/:variationId, del');
+router.delete('/:variationId', del);
 
 export default router;
