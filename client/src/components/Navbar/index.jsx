@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
+
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -34,15 +36,20 @@ const NavBar = (props) => {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Wiki CSA
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button
+            color="inherit"
+            onClick={() => props.history.push('/login')}
+          >
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+};
 
 NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavBar);
+export default withRouter(withStyles(styles)(NavBar));
