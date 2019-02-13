@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "resposta",
+    "description": "reposta de um topico"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "resposta": {
+      "default": "",
+      "type": "text"
+    },
+    "topico": {
+      "model": "topico",
+      "via": "respostas"
+    },
+    "user": {
+      "model": "user",
+      "via": "respostas",
+      "plugin": "users-permissions"
+    }
+  }
+}

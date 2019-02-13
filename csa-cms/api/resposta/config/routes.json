@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/respostas",
+      "handler": "Resposta.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/respostas/count",
+      "handler": "Resposta.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/respostas/:_id",
+      "handler": "Resposta.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/respostas",
+      "handler": "Resposta.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/respostas/:_id",
+      "handler": "Resposta.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/respostas/:_id",
+      "handler": "Resposta.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

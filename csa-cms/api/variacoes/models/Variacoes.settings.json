@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "variacoes",
+  "info": {
+    "name": "variacoes",
+    "description": "variação de uma rotina"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "nome": {
+      "default": "",
+      "type": "string"
+    },
+    "descricao": {
+      "default": "",
+      "type": "text"
+    },
+    "rotina": {
+      "model": "rotina",
+      "via": "variacoes"
+    },
+    "user": {
+      "model": "user",
+      "via": "variacoes",
+      "plugin": "users-permissions"
+    }
+  }
+}
