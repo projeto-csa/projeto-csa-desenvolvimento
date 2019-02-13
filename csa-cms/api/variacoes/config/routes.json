@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/variacoes",
+      "handler": "Variacoes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/variacoes/count",
+      "handler": "Variacoes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/variacoes/:_id",
+      "handler": "Variacoes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/variacoes",
+      "handler": "Variacoes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/variacoes/:_id",
+      "handler": "Variacoes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/variacoes/:_id",
+      "handler": "Variacoes.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

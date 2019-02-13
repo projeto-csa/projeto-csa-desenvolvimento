@@ -4,6 +4,9 @@ const Response = (props) => {
 
   return(
     <div className='Response'>
+      <h3>Resposta</h3>
+      <p>{props.response.resposta}</p>
+      <h4>Metadados</h4>
       <div>TopicID:</div><div>{props.response.topicID}</div>
       <div>UserID:</div><div>{props.response.userID}</div>
       <div>MessageID:</div><p>{props.response.message}</p>

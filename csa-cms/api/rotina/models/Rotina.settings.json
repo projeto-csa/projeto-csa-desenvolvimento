@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "rotina",
+  "info": {
+    "name": "rotina",
+    "description": "Práticas recorrentes em CSAs."
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "descricao": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "topicos": {
+      "collection": "topico",
+      "via": "rotina"
+    },
+    "variacoes": {
+      "collection": "variacoes",
+      "via": "rotina"
+    },
+    "csas": {
+      "collection": "csa",
+      "via": "rotinas"
+    }
+  }
+}

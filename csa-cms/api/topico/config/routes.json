@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/topicos",
+      "handler": "Topico.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/topicos/count",
+      "handler": "Topico.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/topicos/:_id",
+      "handler": "Topico.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/topicos",
+      "handler": "Topico.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/topicos/:_id",
+      "handler": "Topico.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/topicos/:_id",
+      "handler": "Topico.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

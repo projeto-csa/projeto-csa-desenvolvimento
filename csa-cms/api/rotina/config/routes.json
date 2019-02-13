@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rotinas",
+      "handler": "Rotina.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rotinas/count",
+      "handler": "Rotina.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rotinas/:_id",
+      "handler": "Rotina.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rotinas",
+      "handler": "Rotina.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/rotinas/:_id",
+      "handler": "Rotina.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/rotinas/:_id",
+      "handler": "Rotina.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,11 +1,10 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 
 const TopicListItem = (props) => {
+
   return(
-    <div className="TopicListItem">
-      <h3>{props.topic.topicName}</h3>
-      <p>{props.topic.topicDescription}</p>
-    </div>
+    <h3>{props.topic.titulo}</h3>
   )
 }
 
