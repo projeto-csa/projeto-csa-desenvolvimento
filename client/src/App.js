@@ -11,9 +11,10 @@ import Topic from './components/Topic'
 import Register from './components/Register'
 import Login from './components/Login'
 
-class App extends React.Component{
-  render(){
-    return(
+
+class App extends React.Component {
+  render() {
+    return (
       <Router>
         <div className="App">
           <Navbar />
@@ -33,10 +34,11 @@ class App extends React.Component{
           <Route exact path="/rotinas" component={RoutineList} />
           <Route path="/rotina/:routineId" component={Routine}/>
           <Route path="/topico/:topicoId" component={Topic} />
+
         </div>
       </Router>
-    )
+    );
   }
 }
 
-export default App
+export default App;

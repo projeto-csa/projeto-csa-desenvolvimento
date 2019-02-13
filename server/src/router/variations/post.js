@@ -37,7 +37,7 @@ export default (req, res) => {
           if (error2) {
             return res.status(500).json({ success: false, error: error2 });
           }
-          return res.status(500).json({ success: true, saved_variation: variation });
+          return res.status(201).json({ success: true, saved_variation: variation });
         });
       });
     } else {
