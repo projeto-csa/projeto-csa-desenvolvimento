@@ -1,6 +1,7 @@
 import React from 'react'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import Management from '../Management'
 
 class CSAProfile extends React.Component {
   constructor(){
@@ -23,8 +24,9 @@ class CSAProfile extends React.Component {
           <Tab label={"Outra"} key={2}/>
         </Tabs>
         { tab === 0 && <span>Sobre</span> }
-        { tab === 1 && <span>Gestao</span>}
+        { tab === 1 && <Management />}
         { tab === 2 && <span>Outra</span> }
+
       </div>
     )
   }
