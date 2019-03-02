@@ -18,7 +18,7 @@ class CSAProfile extends React.Component {
     return(
       <div>
         Perfil da CSA
-        <Tabs value={tab} onChange={this.handleTab}>
+        <Tabs value={tab} onChange={this.handleTab} variant='fullWidth'>
           <Tab label={"Sobre"} key={0}/>
           <Tab label={"Gestão"} key={1}/>
           <Tab label={"Outra"} key={2}/>

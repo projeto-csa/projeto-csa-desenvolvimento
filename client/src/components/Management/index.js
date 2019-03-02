@@ -14,17 +14,16 @@ class Management extends React.Component{
   }
   showAll = () => {
       this.setState({showAll: !this.state.showAll})
-      console.log('showAll: ', this.state.showAll)
   }
   render(){
     let colab = []
     for(let i = 0; i < 7; i++){
-      colab.push(<GridListTile><UserPortrait key={i}/></GridListTile>)
+      colab.push(<GridListTile key={i}><UserPortrait /></GridListTile>)
     }
     const { showAll } = this.state
     return(
       <div>
-        Colaboradores
+        <h4>Colaboradores</h4>
         <GridList cols={3} cellHeight={'auto'}>
         {colab.slice(0, showAll ? colab.length : 6)}
         </GridList>

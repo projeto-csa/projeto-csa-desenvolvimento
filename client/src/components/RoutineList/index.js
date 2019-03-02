@@ -1,9 +1,9 @@
 import React from 'react'
 import RoutineListItem from '../RoutineListItem'
 import requestRoutines from './request.js'
-import requestTopic from './requestTopic.js'
-import Routine from '../Routine'
-import { Route, Link } from 'react-router-dom'
+//import requestTopic from './requestTopic.js'
+//import Routine from '../Routine'
+import { Link } from 'react-router-dom'
 
 class RoutineList extends React.Component {
 
