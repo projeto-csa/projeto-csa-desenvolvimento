@@ -79,4 +79,4 @@ NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NavBar);
+export default withRouter(withStyles(styles)(NavBar));

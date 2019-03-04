@@ -39,8 +39,8 @@ class App extends React.Component{
           </StyleWrapper>
         </div>
       </Router>
-    )
+    );
   }
 }
 
-export default App
+export default App;

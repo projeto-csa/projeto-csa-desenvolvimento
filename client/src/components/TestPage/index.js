@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import TopicList from '../TopicList'
-import stub from '../TopicList/stub.js'
+import TopicList from '../TopicList';
+import stub from '../TopicList/stub';
 
-const TestPage = () => {
-  return <TopicList topics={stub} />
-}
+const TestPage = () => <TopicList topics={stub} />;
 
-export default TestPage
+export default TestPage;
