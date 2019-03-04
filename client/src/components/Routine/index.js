@@ -1,6 +1,5 @@
 import React from 'react'
 import TopicList from '../TopicList'
-import responseFormStub from '../ResponseForm/stub.js'
 import request from './request'
 
 class Routine extends React.Component {

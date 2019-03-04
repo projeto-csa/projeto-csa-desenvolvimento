@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import CommentBox from './components/CommentBox'
@@ -10,31 +10,33 @@ import Routine from './components/Routine'
 import Topic from './components/Topic'
 import Register from './components/Register'
 import Login from './components/Login'
+import About from './components/About'
+import CSA from './components/CSA'
+import CSAProfile from './components/CSAProfile'
+import StyleWrapper from './StyleWrapper'
 
+class App extends React.Component{
 
-class App extends React.Component {
-  render() {
-    return (
+  render(){
+    return(
       <Router>
         <div className="App">
           <Navbar />
-          <ul>
-            <li key={0}><Link to='/'>Home</Link></li>
-            <li key={1}><Link to='/register'>Register</Link></li>
-            <li key={2}><Link to='/login'>Login</Link></li>
-            <li key={3}><Link to='/topicos'>Topicos</Link></li>
-            <li key={4}><Link to='/rotinas'>Rotinas</Link></li>
-          </ul>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/comment" component={CommentBox} />
-          <Route exact path="/testPage" component={TestPage} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/topicos" component={TopicList} />
-          <Route exact path="/rotinas" component={RoutineList} />
-          <Route path="/rotina/:routineId" component={Routine}/>
-          <Route path="/topico/:topicoId" component={Topic} />
+          <StyleWrapper>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/comment" component={CommentBox} />
+            <Route exact path="/testPage" component={TestPage} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/sobre" component={About} />
+            <Route exact path="/comunidade-que-sustenta-a-agricultura" component={CSA} />
 
+            <Route exact path="/topicos" component={TopicList} />
+            <Route exact path="/rotinas" component={RoutineList} />
+            <Route exact path="/perfil-csa" component={CSAProfile} />
+            <Route path="/rotina/:routineId" component={Routine}/>
+            <Route path="/topico/:topicoId" component={Topic} />
+          </StyleWrapper>
         </div>
       </Router>
     );

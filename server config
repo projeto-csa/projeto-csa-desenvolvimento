@@ -1,0 +1,10 @@
+server:
+  build: ./server
+  command: npm run start:dev
+  ports:
+    - "3001:3001"
+  volumes:
+    - ./server:/src
+    - /server/node_modules
+  depends_on:
+    - mongo

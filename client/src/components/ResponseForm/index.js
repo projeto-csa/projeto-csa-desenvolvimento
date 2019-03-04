@@ -15,7 +15,7 @@ class ResponseForm extends React.Component {
 
   onClick = (responseText) => {
     return () => {
-      this.state.response = ''
+      this.setState({response: ''})
       this.props.onClick({topico: this.props.topico, resposta: responseText}, this.props.newAnswer)
     }
   }

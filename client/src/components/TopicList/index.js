@@ -1,9 +1,9 @@
 import React from 'react'
 import TopicListItem from '../TopicListItem'
 import requestTopics from './request.js'
-import requestTopic from './requestTopic.js'
-import Topic from '../Topic'
-import { Route, Link } from 'react-router-dom'
+//import requestTopic from './requestTopic.js'
+//import Topic from '../Topic'
+import { Link } from 'react-router-dom'
 
 class TopicList extends React.Component {
 
