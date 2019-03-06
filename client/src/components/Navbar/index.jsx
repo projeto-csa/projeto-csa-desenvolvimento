@@ -36,7 +36,7 @@ class NavBar extends React.Component{
 
   openDrawer = (open) => {
     return () => {
-      console.log(open)
+      console.log('Navigation menu opened: ', open)
       this.setState({drawer: open})
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react'
-import ResponseList from '../ResponseList'
+import Response from '../Response'
 import ResponseForm from '../ResponseForm'
+import PostOwner from '../PostOwner'
 import putRequest from './putRequest'
 import request from './request'
 import RoutineList from '../RoutineList'
@@ -30,18 +31,24 @@ class Topic extends React.Component {
   render(){
     const { topic } = this.state
     const { rotinas } = this.state
-    console.log('rotinas do topico: ', this.state.rotinas)
+    console.log(topic)
     return(
       <div className='Topic'>
-        <h1>{topic.titulo}</h1>
-        <div>{topic.descricao}</div>
-        <h3>Metadados</h3>
-        <div>Topic ID</div>
-        <div>Topic creator</div>
-        { topic.respostas? <ResponseList responses={topic.respostas} /> : null }
-        <ResponseForm onClick={putRequest} topico={topic._id} newAnswer={this.newAnswer}/>
-        <h3>Rotinas relacionadas</h3>
+        <h4>Rotinas relacionadas</h4>
         { rotinas ? <RoutineList rotinas={rotinas} /> : null }
+        <h1>{topic.titulo}</h1>
+        <PostOwner user={topic.user} createdAt={topic.createdAt}/>
+
+        <div>{topic.descricao}</div>
+        <hr/>
+        { topic.respostas ?
+          <div>
+            {topic.respostas.map((item, index) => <Response response={item} key={index} />)}
+          </div>
+          : null
+        }
+        <ResponseForm onClick={putRequest} topico={topic._id} newAnswer={this.newAnswer}/>
+
       </div>
     )
   }

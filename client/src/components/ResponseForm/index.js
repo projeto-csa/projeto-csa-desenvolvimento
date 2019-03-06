@@ -4,7 +4,7 @@ class ResponseForm extends React.Component {
   constructor(){
     super()
     this.state = {
-      response: undefined
+      response: ''
     }
   }
 
@@ -13,11 +13,15 @@ class ResponseForm extends React.Component {
     this.setState({response: e.target.value})
   }
 
-  onClick = (responseText) => {
-    return () => {
-      this.setState({response: ''})
-      this.props.onClick({topico: this.props.topico, resposta: responseText}, this.props.newAnswer)
-    }
+  onClick = () => {
+      this.props.onClick(
+        {
+          user: JSON.parse(localStorage.getItem('user'))._id,
+          topico: this.props.topico,
+          resposta: this.state.response
+        },
+        this.props.newAnswer)
+        this.setState({response: ''})
   }
 
   render(){
@@ -25,7 +29,7 @@ class ResponseForm extends React.Component {
       <div className='ResponseForm'>
         <div>Sua resposta:</div>
         <input type='text' onChange={this.handleChange} value={this.state.response}/>
-        <input type='submit' onClick={this.onClick(this.state.response)} value='Enviar'/>
+        <input type='submit' onClick={this.onClick} value='Enviar'/>
       </div>
     )
   }

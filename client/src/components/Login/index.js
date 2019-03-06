@@ -6,14 +6,14 @@ class Login extends React.Component {
   constructor(){
     super()
     this.state = {
-      identifyer: '',
+      identifier: '',
       password: '',
       redirect: false
     }
   }
 
-  emailChange = (e) => {
-    this.setState({email: e.target.value})
+  identifierChange = (e) => {
+    this.setState({identifier: e.target.value})
   }
 
   passwordChange = (e) => {
@@ -21,13 +21,14 @@ class Login extends React.Component {
   }
 
   handleData = (data) => {
-    console.log(data)
     localStorage.setItem('token', data.jwt)
+    localStorage.setItem('user', JSON.stringify(data.user))
+    console.log(localStorage.getItem('user'))
   }
 
   onClick = () => {
     let payload = {
-      identifier: this.state.email,
+      identifier: this.state.identifier,
       password: this.state.password
     }
     request(payload, this.handleData)
@@ -39,7 +40,7 @@ class Login extends React.Component {
     return(
       <div>
         <h1>Login</h1>
-        <input type='text' placeholder='Usuário' onChange={this.emailChange}/><br/>
+        <input type='text' placeholder='Usuário' onChange={this.identifierChange}/><br/>
         <input type='password' placeholder='Senha' onChange={this.passwordChange}/><br/>
         <input type='submit' onClick={this.onClick}/>
         {this.state.redirect ? <Redirect to='/' /> : null}
