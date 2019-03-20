@@ -26,13 +26,18 @@ module.exports = {
       .map(ast => ast.alias)
       .join(' ');
 
+    console.log('fetchAll: populate: ', populate)
     return Topico
       .find()
       .where(filters.where)
       .sort(filters.sort)
       .skip(filters.start)
       .limit(filters.limit)
-      .populate(filters.populate || populate);
+      .populate(filters.populate || populate)
+      .populate({
+        path: 'respostas',
+        populate: {path: 'user'}
+      })
   },
 
   /**
@@ -47,7 +52,7 @@ module.exports = {
       .filter(ast => ast.autoPopulate !== false)
       .map(ast => ast.alias)
       .join(' ');
-
+    console.log('fetch: populate: ', populate)
     return Topico
       .findOne(_.pick(params, _.keys(Topico.schema.paths)))
       .populate(populate);

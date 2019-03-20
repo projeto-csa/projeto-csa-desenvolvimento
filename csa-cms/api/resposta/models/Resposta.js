@@ -19,11 +19,11 @@ module.exports = {
 
   // After fetching all values.
   // Fired after a `fetchAll` operation.
-   afterFetchAll: async (model, results) => {
-     console.log(results)
-     var r = results.map((item, index)=> Object.assign({}, {bubbles: `bubbles ${index}`}, item._doc))
-     console.log(r)
-   },
+   //afterFetchAll: async (model, results) => {
+     //console.log(results)
+     //var r = results.map((item, index)=> Object.assign({}, {bubbles: `bubbles ${index}`}, item._doc))
+     //console.log(r)
+   //},
 
   // Fired before a `fetch` operation.
   // beforeFetch: async (model) => {},

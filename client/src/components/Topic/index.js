@@ -2,7 +2,7 @@ import React from 'react'
 import Response from '../Response'
 import ResponseForm from '../ResponseForm'
 import PostOwner from '../PostOwner'
-import putRequest from './putRequest'
+import answerRequest from './answerRequest'
 import request from './request'
 import RoutineList from '../RoutineList'
 
@@ -24,14 +24,12 @@ class Topic extends React.Component {
     let temp = this.state.topic
     if(!temp.respostas) temp.respostas = [answer]
     else temp.respostas = [answer, ...temp.respostas]
-    console.log("temp.respostas: ", temp.respostas)
     this.setState({topic: temp})
   }
 
   render(){
     const { topic } = this.state
     const { rotinas } = this.state
-    console.log(topic)
     return(
       <div className='Topic'>
         <h4>Rotinas relacionadas</h4>
@@ -43,11 +41,13 @@ class Topic extends React.Component {
         <hr/>
         { topic.respostas ?
           <div>
-            {topic.respostas.map((item, index) => <Response response={item} key={index} />)}
+            {topic.respostas.map((item, index) =>
+              <Response response={item} key={index} />
+            )}
           </div>
           : null
         }
-        <ResponseForm onClick={putRequest} topico={topic._id} newAnswer={this.newAnswer}/>
+        <ResponseForm onClick={answerRequest} topico={topic._id} newAnswer={this.newAnswer}/>
 
       </div>
     )

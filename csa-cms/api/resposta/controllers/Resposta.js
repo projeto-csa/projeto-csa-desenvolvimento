@@ -53,6 +53,8 @@ module.exports = {
    */
 
   create: async (ctx) => {
+    //check if response user is already on topic user list.
+    //if not, add user to list.
     return strapi.services.resposta.add(ctx.request.body);
   },
 
