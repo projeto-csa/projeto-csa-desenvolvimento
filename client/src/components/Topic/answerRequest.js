@@ -17,20 +17,5 @@ const answerRequest = (payload, handleData) => {
       .catch(error => {
         console.log(error)
       })
-  axios({
-        method: 'PUT',
-        url: 'http://localhost:1337/topicos/' + payload.topico,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        },
-        data: {user: payload.user}
-      })
-      .then(response => {
-        console.log('resposta do PUT: ', response.data)
-        handleData(response.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
 }
 export default answerRequest

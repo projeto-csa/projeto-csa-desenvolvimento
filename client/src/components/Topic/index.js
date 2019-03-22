@@ -23,7 +23,7 @@ class Topic extends React.Component {
   newAnswer = (answer) => {
     let temp = this.state.topic
     if(!temp.respostas) temp.respostas = [answer]
-    else temp.respostas = [answer, ...temp.respostas]
+    else temp.respostas = [...temp.respostas, answer]
     this.setState({topic: temp})
   }
 
@@ -48,7 +48,6 @@ class Topic extends React.Component {
           : null
         }
         <ResponseForm onClick={answerRequest} topico={topic._id} newAnswer={this.newAnswer}/>
-
       </div>
     )
   }

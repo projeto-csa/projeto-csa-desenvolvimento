@@ -9,7 +9,10 @@ const Response = (props) => {
     <div className='Response'>
       <PostOwner user={props.response.user} createdAt={props.response.createdAt}/>
       <p>{props.response.resposta}</p>
-      <Button><DeleteIcon /></Button>
+      { props.response.user._id === localStorage.getItem('user') ?
+        <Button><DeleteIcon /></Button>
+        : null
+      }
       <hr/>
     </div>
   )

@@ -3,7 +3,7 @@ import TopicListItem from '../TopicListItem'
 import requestTopics from './request.js'
 //import requestTopic from './requestTopic.js'
 //import Topic from '../Topic'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 
 class TopicList extends React.Component {
@@ -24,8 +24,6 @@ class TopicList extends React.Component {
 
   newTopic = (value) => () => this.setState({newTopic: value})
 
-  handleChange = () => null
-
   render(){
     const { topicos } = this.state
     return(
@@ -37,16 +35,7 @@ class TopicList extends React.Component {
           </Link>
         ) : null}
         <Button onClick={this.newTopic(true)}>Novo tópico</Button>
-        {this.state.newTopic ?
-          <div>
-            <label>Titulo</label><br/>
-            <input type='text' placeholder='Titulo' onChange={this.handleChange} /><br/>
-            <textarea placeholder='Insira a descrição' onChange={this.handleChange} /><br/>
-            <Button onClick={this.newTopic(false)}>Criar</Button>
-            <Button onClick={this.newTopic(false)}>Cancelar</Button>
-          </div>
-          : null
-        }
+        {this.state.newTopic ? <Redirect to='/topicCreation' /> : null }
       </div>
     )
   }

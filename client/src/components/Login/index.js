@@ -22,8 +22,7 @@ class Login extends React.Component {
 
   handleData = (data) => {
     localStorage.setItem('token', data.jwt)
-    localStorage.setItem('user', JSON.stringify(data.user))
-    console.log(localStorage.getItem('user'))
+    localStorage.setItem('user', data.user._id)
   }
 
   onClick = () => {

@@ -8,6 +8,7 @@ import TopicList from './components/TopicList'
 import RoutineList from './components/RoutineList'
 import Routine from './components/Routine'
 import Topic from './components/Topic'
+import TopicCreation from './components/TopicCreation'
 import Register from './components/Register'
 import Login from './components/Login'
 import About from './components/About'
@@ -32,6 +33,7 @@ class App extends React.Component{
             <Route exact path="/comunidade-que-sustenta-a-agricultura" component={CSA} />
 
             <Route exact path="/topicos" component={TopicList} />
+            <Route exact path="/topicCreation" component={TopicCreation} />
             <Route exact path="/rotinas" component={RoutineList} />
             <Route exact path="/perfil-csa" component={CSAProfile} />
             <Route path="/rotina/:routineId" component={Routine}/>

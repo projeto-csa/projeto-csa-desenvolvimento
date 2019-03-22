@@ -16,7 +16,7 @@ class ResponseForm extends React.Component {
   onClick = () => {
       this.props.onClick(
         {
-          user: JSON.parse(localStorage.getItem('user'))._id,
+          user: localStorage.getItem('user'),
           topico: this.props.topico,
           resposta: this.state.response
         },
