@@ -1,17 +1,19 @@
 import React from 'react'
+import PostOwner from '../PostOwner'
+import DeleteIcon from '@material-ui/icons/Delete'
+import Button from '@material-ui/core/Button'
 
 const Response = (props) => {
-
+  console.log(props.response.user)
   return(
     <div className='Response'>
-      <h3>Resposta</h3>
+      <PostOwner user={props.response.user} createdAt={props.response.createdAt}/>
       <p>{props.response.resposta}</p>
-      <h4>Metadados</h4>
-      <div>TopicID:</div><div>{props.response.topicID}</div>
-      <div>UserID:</div><div>{props.response.userID}</div>
-      <div>MessageID:</div><p>{props.response.message}</p>
-      <div>Created at:</div><div>{props.response.createdAt}</div>
-      <div>Updated at:</div><div>{props.response.updatedAt}</div>
+      { props.response.user._id === localStorage.getItem('user') ?
+        <Button><DeleteIcon /></Button>
+        : null
+      }
+      <hr/>
     </div>
   )
 }

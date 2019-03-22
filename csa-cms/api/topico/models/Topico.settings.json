@@ -22,16 +22,23 @@
     "user": {
       "model": "user",
       "via": "topicos",
+      "dominant": true,
       "plugin": "users-permissions"
     },
     "rotina": {
       "collection": "rotina",
-      "dominant": true,
-      "via": "topicos"
+      "via": "topicos",
+      "dominant": true
     },
     "respostas": {
       "collection": "resposta",
       "via": "topico"
+    },
+    "privado": {
+      "default": false,
+      "unique": true,
+      "type": "boolean",
+      "required": true
     }
   }
 }

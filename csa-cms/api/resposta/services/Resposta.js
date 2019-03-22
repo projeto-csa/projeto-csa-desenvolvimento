@@ -81,6 +81,8 @@ module.exports = {
 
     // Create entry with no-relational data.
     const entry = await Resposta.create(data);
+    //console.log('values: ', values)
+    //Topico.update()
 
     // Create relational data and return the entry.
     return Resposta.updateRelations({ _id: entry.id, values: relations });
